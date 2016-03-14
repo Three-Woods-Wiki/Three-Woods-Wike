@@ -1,0 +1,58 @@
+﻿{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{%  static 'js/jquery-1.11.3.js' %}"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        body {
+            position: relative;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .my-middle-container {
+            position: relative;
+            width: 400px;
+            min-height: 100%;
+            margin: auto;
+            top: 100px;
+            line-height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="my-middle-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Information</h3>
+            </div>
+            <div class="panel-body">
+                <form>
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input class="form-control" id="username" value="{{ name }}" disabled="disabled"/>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone</label>
+                    <input class="form-control" id="telephone" value="{{ phone_num }}" disabled="disabled"/>
+                </div>
+                <input class="btn btn-primary btn-shadow" type="button" value="Logout" onclick="logout()" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function logout(){
+
+            alert("您已退出登录");
+            window.location.href = "../logout"
+        }
+    </script>
+</body>
+</html>
